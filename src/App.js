@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import MainMenu from "./components/MainMenu";
+import Multiplayer from "./components/Multiplayer";
+import Navi from "./components/Navi";
+import NotFound from "./components/NotFound";
+import Singleplayer from "./components/Singleplayer";
+import { Routes, Route } from "react-router-dom";
+import About from "./components/About";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navi />
+      <Routes>
+        <Route path="/" element={<MainMenu />} />
+        <Route path="/singleplayer" element={<Singleplayer />} />
+        <Route path="/multiplayer" element={<Multiplayer />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

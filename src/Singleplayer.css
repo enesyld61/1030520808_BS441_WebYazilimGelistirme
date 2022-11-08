@@ -1,0 +1,19 @@
+.imgBtn {
+  margin: 10px;
+}
+.images {
+  width: 150px;
+  height: 150px;
+}
+.imgBtn.green {
+  background-color: #61ff00 !important;
+}
+.imgBtn.red {
+  background-color: red !important;
+}
+.imgBtn.gray {
+  background-color: #969994 !important;
+}
+#cont.wait {
+  pointer-events: none;
+}
