@@ -1,7 +1,7 @@
 export const Multiplayer = () => {
   return (
     <div>
-      <h2>Multiplayer</h2>
+      <h1>Multiplayer</h1>
     </div>
   );
 };

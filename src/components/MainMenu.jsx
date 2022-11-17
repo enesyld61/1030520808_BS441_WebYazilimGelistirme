@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-import "../MainMenu.css";
+import "../assets/MainMenu.css";
 import { Button, Col, Row, Carousel, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rock from "../images/rock.png";
@@ -12,31 +11,42 @@ export const MainMenu = () => {
       <Container>
         <Row>
           <Col xs="6">
-            <Carousel id="abc">
+            <Carousel id="carouselMenu">
               <Carousel.Item interval={500}>
-                <img className="carouselImages" src={Rock} />
+                <img className="carouselImages" src={Rock} alt="rock" />
               </Carousel.Item>
               <Carousel.Item interval={500}>
-                <img className="carouselImages" src={Paper} />
+                <img className="carouselImages" src={Paper} alt="paper" />
               </Carousel.Item>
               <Carousel.Item interval={500}>
-                <img className="carouselImages" src={Scissors} />
+                <img className="carouselImages" src={Scissors} alt="scissors" />
               </Carousel.Item>
             </Carousel>
           </Col>
-          <Col xs="3">
-            <Link to="/singleplayer">
-              <Button variant="outline-primary" className="btnn">
-                Singleplayer
-              </Button>
-            </Link>{" "}
-          </Col>
-          <Col xs="3">
-            <Link to="/multiplayer">
-              <Button variant="outline-primary" className="btnn">
-                Multiplayer
-              </Button>
-            </Link>
+          <Col xs="6">
+            <Row>
+              <Col xs="6">
+                <Link to="/singleplayer">
+                  <Button variant="outline-primary" className="modeBtn">
+                    Singleplayer
+                  </Button>
+                </Link>{" "}
+              </Col>
+              <Col xs="6">
+                <Link to="/multiplayer">
+                  <Button variant="outline-primary" className="modeBtn">
+                    Multiplayer
+                  </Button>
+                </Link>
+              </Col>
+            </Row>
+            <Row>
+              <Link to="/how-to-play">
+                <Button variant="outline-warning" id="howToPlayBtn">
+                  How To Play
+                </Button>
+              </Link>
+            </Row>
           </Col>
         </Row>
       </Container>

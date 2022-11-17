@@ -18,6 +18,9 @@ export const Navi = () => {
               <Nav.Link as={Link} to="/multiplayer">
                 Multiplayer
               </Nav.Link>
+              <Nav.Link as={Link} to="/how-to-play">
+                How To Play
+              </Nav.Link>
               <Nav.Link as={Link} to="/about">
                 About
               </Nav.Link>

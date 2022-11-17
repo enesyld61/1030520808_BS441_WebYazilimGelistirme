@@ -1,0 +1,25 @@
+.modeBtn {
+  margin-top: 250px;
+  padding: 30px 50px !important;
+  font-size: 30px !important;
+  border: 2px solid !important;
+  border-radius: 15px !important;
+}
+
+.carouselImages {
+  height: 400px !important;
+  width: 400px !important;
+}
+#carouselMenu {
+  top: 30%;
+  left: 0%;
+  pointer-events: none;
+}
+#howToPlayBtn {
+  margin-top: 30px;
+  padding: 15px 30px !important;
+  font-size: 30px !important;
+  border: 2px solid !important;
+  border-radius: 15px !important;
+  font-size: 24px !important;
+}

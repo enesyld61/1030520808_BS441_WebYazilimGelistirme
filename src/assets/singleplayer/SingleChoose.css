@@ -1,0 +1,38 @@
+#chooseCont {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#chooseCont.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#chooseCont.closing {
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.5s ease;
+}
+
+#chooseCont.close {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ppImages {
+  width: 70px;
+  height: 70px;
+  margin: 10px 10px;
+  border: solid white 2px;
+  cursor: pointer;
+}
+
+.ppImages.selected {
+  border: solid blue 2px;
+}
+
+#nameForm {
+  max-width: 250px;
+  display: inline;
+}

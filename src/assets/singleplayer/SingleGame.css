@@ -1,0 +1,47 @@
+.imgBtn {
+  margin: 10px;
+}
+.images {
+  width: 150px;
+  height: 150px;
+}
+.imgBtn.green {
+  background-color: #61ff00 !important;
+}
+.imgBtn.red {
+  background-color: red !important;
+}
+.imgBtn.gray {
+  background-color: #969994 !important;
+}
+
+#cont {
+  max-width: 1800px !important;
+}
+
+#cont.wait {
+  pointer-events: none;
+}
+
+#playCont {
+  transition: all 0.5s ease;
+  max-width: 1800px !important;
+  transform: scale(0.5);
+}
+
+#playCont.close {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#playCont.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  transition: all 0.5s ease;
+}
+
+.ppBig {
+  width: 100px;
+  height: 100px;
+}
