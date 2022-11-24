@@ -1,6 +1,6 @@
 import "./assets/App.css";
 import MainMenu from "./components/MainMenu";
-import Multiplayer from "./components/Multiplayer";
+import Multiplayer from "./components/multiplayer/Multiplayer";
 import Navi from "./components/Navi";
 import NotFound from "./components/NotFound";
 import { Routes, Route } from "react-router-dom";
@@ -16,7 +16,6 @@ function App() {
         <Route path="/singleplayer" element={<Singleplayer />} />
         <Route path="/multiplayer" element={<Multiplayer />} />
         <Route path="/about" element={<About />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>

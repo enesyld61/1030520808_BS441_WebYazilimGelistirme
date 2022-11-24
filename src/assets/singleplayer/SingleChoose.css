@@ -3,21 +3,17 @@
   top: 400px;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
+  transition: all 0.5s ease;
 }
 
 #chooseCont.open {
   opacity: 1;
   pointer-events: auto;
 }
-
-#chooseCont.closing {
-  transform: translate(-50%, -50%) scale(0.5);
-  transition: all 0.5s ease;
-}
-
 #chooseCont.close {
   opacity: 0;
   pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.5);
 }
 
 .ppImages {

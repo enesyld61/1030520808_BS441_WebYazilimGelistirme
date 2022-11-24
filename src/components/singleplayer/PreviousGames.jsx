@@ -22,11 +22,15 @@ export const PreviousGames = ({ history, setHistory }) => {
       document.getElementById("btnDeleteHistory").classList.remove("open");
     }
   }, [open]);
-
   useEffect(() => {
-    if (history[0] != null && open) {
-      document.getElementById("btnDeleteHistory").classList.add("open");
-      document.getElementById("btnDeleteHistory").classList.remove("close");
+    if (history[0] != null) {
+      document.getElementById("btnHistory").classList.remove("close");
+      if (open) {
+        document.getElementById("btnDeleteHistory").classList.add("open");
+        document.getElementById("btnDeleteHistory").classList.remove("close");
+      }
+    } else {
+      document.getElementById("btnHistory").classList.add("close");
     }
   }, [history]);
 

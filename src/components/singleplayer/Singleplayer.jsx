@@ -56,9 +56,8 @@ export const Singleplayer = () => {
       } else {
         setResult(["Draw!", "draw"]);
       }
-
       setTimeout(gameEnd, 1000);
-    } else {
+    } else if (currentRound != 0) {
       setTimeout(nextRound, 1000);
     }
   }, [currentRound]);
@@ -144,11 +143,7 @@ export const Singleplayer = () => {
   const playAgain = () => {
     const resultCont = document.getElementById("resultCont");
     resultCont.classList.remove("open");
-    resultCont.classList.add("closing");
-    setTimeout(() => {
-      resultCont.classList.remove("closing");
-      resultCont.classList.add("close");
-    }, 300);
+    resultCont.classList.add("close");
     document.getElementById("cont").classList.remove("wait");
     document.getElementById("playCont").classList.add("close");
     document.getElementById("playCont").classList.remove("open");

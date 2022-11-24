@@ -25,11 +25,7 @@ export const SingleChoose = ({
     playCont.classList.add("open");
     const chooseCont = document.getElementById("chooseCont");
     chooseCont.classList.remove("open");
-    chooseCont.classList.add("closing");
-    setTimeout(() => {
-      chooseCont.classList.remove("closing");
-      chooseCont.classList.add("close");
-    }, 300);
+    chooseCont.classList.add("close");
   };
 
   const changePP = (pp, int) => {

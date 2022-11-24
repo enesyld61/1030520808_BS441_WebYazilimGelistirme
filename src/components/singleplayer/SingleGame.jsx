@@ -4,13 +4,6 @@ import Paper from "../../images/paper.png";
 import Scissors from "../../images/scissors.png";
 import "../../assets/singleplayer/SingleGame.css";
 import ppGray from "../../images/ppGray.jpg";
-
-///////////////////////////////////////////////////////////////
-//////////////// SELECTED PP //////////////////////////////////
-/////// PP YOU PROPS OLARAK AKTARILMALI ///////////////////////
-///////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////
-
 export const SingleGame = ({
   play,
   pWin,
@@ -26,7 +19,6 @@ export const SingleGame = ({
           <Row>
             <Col xs="5">
               <img className="ppBig" src={selectedPP} alt="ppYou"></img>
-              {/* <img className="ppBig" src={ppGray} alt="ppYou"></img> */}
               <h2>{selectedName}</h2>
               <Button
                 onClick={() => {
