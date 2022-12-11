@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 import Rock from "../images/rock.png";
 import Paper from "../images/paper.png";
 import Scissors from "../images/scissors.png";
+import { useEffect } from "react";
 export const MainMenu = () => {
+  useEffect(() => {
+    document.title = "Rock-Paper-Scissors";
+  }, []);
   return (
     <div>
       <h1>Rock-Paper-Scissors</h1>

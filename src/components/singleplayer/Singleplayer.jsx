@@ -21,6 +21,7 @@ export const Singleplayer = () => {
   const [history, setHistory] = useState([]);
   useEffect(() => {
     setHistory(JSON.parse(localStorage.getItem("previousSingle")));
+    document.title = "Singleplayer";
   }, []);
   useEffect(() => {
     if (
