@@ -1,0 +1,64 @@
+#example-collapse-text {
+  max-width: 400 !important;
+}
+#collapseFull {
+  position: absolute;
+  width: 400px;
+  top: 100px;
+  z-index: 2;
+}
+
+.resultListItem.win {
+  background-color: rgb(128, 255, 0);
+}
+.resultListItem.lose {
+  background-color: rgb(255, 44, 37);
+}
+.resultListItem.draw {
+  background-color: rgb(175, 175, 175);
+}
+
+.resultPP {
+  width: 30px;
+  height: 30px;
+  border: solid 1px;
+}
+.resultWriting {
+  display: inline;
+}
+#btnsDiv {
+  text-align: start;
+}
+
+#btnHistory {
+  font-size: larger !important;
+  width: 50px !important;
+  height: 50px !important;
+  margin-left: 12px;
+  transition: all 0.5s ease;
+}
+
+#btnHistory.close {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#btnDeleteHistory {
+  font-size: larger !important;
+  width: 50px !important;
+  height: 50px !important;
+  margin-left: 5px;
+  transition: all 0.5s ease;
+}
+
+#btnDeleteHistory.close {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#btnDeleteHistory.open {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s ease-in-out;
+}

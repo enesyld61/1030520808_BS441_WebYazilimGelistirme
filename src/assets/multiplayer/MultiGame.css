@@ -46,7 +46,15 @@
   height: 100px;
 }
 
+#p1Cont.disable {
+  pointer-events: none;
+}
+
 .turn {
   background-color: rgb(171, 255, 192);
   border-radius: 10px;
+}
+
+#p2Cont.disable {
+  pointer-events: none;
 }

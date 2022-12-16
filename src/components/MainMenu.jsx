@@ -11,7 +11,7 @@ export const MainMenu = () => {
   }, []);
   return (
     <div>
-      <h1>Rock-Paper-Scissors</h1>
+      <h1 id="mainTitle">Rock - Paper - Scissors</h1>
       <Container>
         <Row>
           <Col xs="6">

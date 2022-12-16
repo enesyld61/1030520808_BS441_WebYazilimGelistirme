@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import React from "react";
 import {
   Button,
   Collapse,
@@ -7,10 +8,9 @@ import {
   ListGroupItem,
 } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import "../../assets/singleplayer/PreviousGames.css";
-import ppGray from "../../images/ppGray.jpg";
+import "../../assets/multiplayer/MultiPreviousGames.css";
 
-export const PreviousGames = ({ history, setHistory }) => {
+export const MultiPreviousGames = ({ history, setHistory }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -22,6 +22,7 @@ export const PreviousGames = ({ history, setHistory }) => {
       document.getElementById("btnDeleteHistory").classList.remove("open");
     }
   }, [open]);
+
   useEffect(() => {
     if (history[0] != null) {
       document.getElementById("btnHistory").classList.remove("close");
@@ -65,7 +66,6 @@ export const PreviousGames = ({ history, setHistory }) => {
           🗑
         </Button>
       </div>
-
       <Container id="collapse-text">
         <Collapse in={open}>
           <ListGroup>
@@ -74,11 +74,11 @@ export const PreviousGames = ({ history, setHistory }) => {
                 className={`resultListItem ${result.result}`}
                 key={history.indexOf(result)}
               >
-                <img className="resultPP" src={result.pp} alt="pp" />{" "}
-                <h5 className="resultWriting">{result.name}</h5>{" "}
+                <img className="resultPP" src={result.pp1} alt="pp" />{" "}
+                <h5 className="resultWriting">{result.name1}</h5>{" "}
                 <h5 className="resultWriting">{result.score}</h5>{" "}
-                <h5 className="resultWriting">Bot</h5>{" "}
-                <img className="resultPP" src={ppGray} alt="pp" />
+                <h5 className="resultWriting">{result.name2}</h5>{" "}
+                <img className="resultPP" src={result.pp2} alt="pp" />
               </ListGroupItem>
             ))}
           </ListGroup>
@@ -87,4 +87,4 @@ export const PreviousGames = ({ history, setHistory }) => {
     </div>
   );
 };
-export default PreviousGames;
+export default MultiPreviousGames;

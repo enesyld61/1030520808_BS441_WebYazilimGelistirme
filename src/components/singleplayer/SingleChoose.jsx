@@ -126,6 +126,7 @@ export const SingleChoose = ({
           type="text"
           placeholder="name"
         />
+        <hr></hr>
         <Row>
           <Col xs="6">
             <h2>Max Round</h2>

@@ -1,0 +1,29 @@
+#resultLabel {
+  margin-top: 50px !important;
+}
+
+.resultBtns {
+  margin-bottom: 50px !important;
+}
+
+#resultCont {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.5s ease;
+  max-width: 500px !important;
+  background-color: rgb(200, 200, 200, 0.5);
+  border-radius: 15px !important;
+}
+
+#resultCont.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+  transition: all 0.5s ease;
+}
+#resultCont.close {
+  opacity: 0 !important;
+  pointer-events: none;
+}

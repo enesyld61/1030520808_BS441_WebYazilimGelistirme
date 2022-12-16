@@ -4,7 +4,7 @@ import SingleChoose from "./SingleChoose";
 import SingleGame from "./SingleGame";
 import SingleResult from "./SingleResult";
 import { useState, useEffect } from "react";
-import PreviousGames from "./PreviousGames";
+import SinglePreviousGames from "./SinglePreviousGames";
 
 export const Singleplayer = () => {
   const [pWin, setWin] = useState(0);
@@ -110,12 +110,14 @@ export const Singleplayer = () => {
       }
     }
     document.getElementById("cont").classList.add("wait");
+    document.getElementById("pCount").classList.remove("turn");
     setCurrentRound((prevState) => prevState + 1);
     setBtns([btn, pcBtn]);
   };
 
   const nextRound = () => {
     document.getElementById("cont").classList.remove("wait");
+    document.getElementById("pCount").classList.add("turn");
     for (let btn of btns) {
       btn.classList.remove("red");
       btn.classList.remove("gray");
@@ -130,6 +132,7 @@ export const Singleplayer = () => {
   };
 
   const clearHistory = () => {
+    document.getElementById("pCount").classList.add("turn");
     setWin(0);
     setLose(0);
     setDraw(0);
@@ -164,7 +167,7 @@ export const Singleplayer = () => {
         selectedPP={selectedPP}
         selectedName={selectedName}
       />
-      <PreviousGames history={history} setHistory={setHistory} />
+      <SinglePreviousGames history={history} setHistory={setHistory} />
       <SingleChoose
         disable={disable}
         setRound={setRound}

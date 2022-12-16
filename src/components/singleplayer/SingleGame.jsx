@@ -17,7 +17,7 @@ export const SingleGame = ({
       <Container id="playCont" className="close">
         <Container id="cont">
           <Row>
-            <Col xs="5">
+            <Col xs="5" id="pCount" className="turn">
               <img className="ppBig" src={selectedPP} alt="ppYou"></img>
               <h2>{selectedName}</h2>
               <Button
