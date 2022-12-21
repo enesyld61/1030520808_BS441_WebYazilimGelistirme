@@ -45,6 +45,13 @@ export const MainMenu = () => {
               </Col>
             </Row>
             <Row>
+              <Link to="/noname">
+                <Button variant="outline-primary" className="modeBtnDown">
+                  Noname
+                </Button>
+              </Link>
+            </Row>
+            <Row>
               <Link to="/how-to-play">
                 <Button variant="outline-warning" id="howToPlayBtn">
                   How To Play

@@ -7,7 +7,9 @@ export const About = () => {
   return (
     <div>
       <h1>About</h1>
-      <p>Nothing here, for now.</p>
+      <a href="https://github.com/enesyld61/1030520808_BS441_WebYazilimGelistirme.git">
+        https://github.com/enesyld61/1030520808_BS441_WebYazilimGelistirme.git
+      </a>
     </div>
   );
 };

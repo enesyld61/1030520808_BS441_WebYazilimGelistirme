@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import About from "./components/About";
 import Singleplayer from "./components/singleplayer/Singleplayer";
 import HowToPlay from "./components/HowToPlay";
+import Noname from "./components/noname/Noname";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<MainMenu />} />
         <Route path="/singleplayer" element={<Singleplayer />} />
         <Route path="/multiplayer" element={<Multiplayer />} />
+        <Route path="/noname" element={<Noname />} />
         <Route path="/about" element={<About />} />
         <Route path="/how-to-play" element={<HowToPlay />} />
         <Route path="*" element={<NotFound />} />
