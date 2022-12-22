@@ -23,9 +23,21 @@ export const Multiplayer = () => {
   const [history, setHistory] = useState([]);
   const [intP1, setIntP1] = useState(null);
   const [intP2, setIntP2] = useState(null);
+  const [newStorage, setNewStorage] = useState(true);
 
   useEffect(() => {
     setHistory(JSON.parse(localStorage.getItem("previousMulti")));
+  }, [newStorage]);
+
+  useEffect(() => {
+    if (localStorage.getItem("previousMulti") !== null) {
+      setHistory(JSON.parse(localStorage.getItem("previousMulti")));
+    } else {
+      localStorage.setItem("previousMulti", JSON.stringify([]));
+      setNewStorage(!newStorage);
+    }
+    //setHistory(JSON.parse(localStorage.getItem("previousMulti")));
+
     document.title = "Multiplayer";
   }, []);
 

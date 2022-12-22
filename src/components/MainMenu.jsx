@@ -45,9 +45,9 @@ export const MainMenu = () => {
               </Col>
             </Row>
             <Row>
-              <Link to="/noname">
+              <Link to="/3x3game">
                 <Button variant="outline-primary" className="modeBtnDown">
-                  Noname
+                  3x3 Game
                 </Button>
               </Link>
             </Row>

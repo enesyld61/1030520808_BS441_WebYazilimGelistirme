@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import "../../assets/noname/Noname.css";
+import "../../assets/game3x3/Game3x3.css";
 import Rock from "../../images/rock.png";
 import Paper from "../../images/paper.png";
 import Scissors from "../../images/scissors.png";
@@ -15,7 +15,7 @@ export const Noname = () => {
   const [text, setText] = useState("Choose one");
 
   useEffect(() => {
-    document.title = "Noname";
+    document.title = "3x3 Game";
     const tempArr = [
       { id: 0, int: Math.floor(Math.random() * 3), text: "?" },
       { id: 1, int: Math.floor(Math.random() * 3), text: "?" },
@@ -109,7 +109,7 @@ export const Noname = () => {
 
   return (
     <div>
-      <h1>Noname</h1>
+      <h1>3x3 Game</h1>
       <Container>
         <Row>
           <Col xs="6" id="colBtn">

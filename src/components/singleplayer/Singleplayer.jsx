@@ -19,8 +19,18 @@ export const Singleplayer = () => {
   const [selectedPP, setSelectedPP] = useState("");
   const [selectedName, setSelectedName] = useState("");
   const [history, setHistory] = useState([]);
+  const [newStorage, setNewStorage] = useState(true);
   useEffect(() => {
     setHistory(JSON.parse(localStorage.getItem("previousSingle")));
+  }, [newStorage]);
+  useEffect(() => {
+    if (localStorage.getItem("previousSingle") !== null) {
+      setHistory(JSON.parse(localStorage.getItem("previousSingle")));
+    } else {
+      localStorage.setItem("previousSingle", JSON.stringify([]));
+      setNewStorage(!newStorage);
+    }
+    //setHistory(JSON.parse(localStorage.getItem("previousSingle")));
     document.title = "Singleplayer";
   }, []);
   useEffect(() => {

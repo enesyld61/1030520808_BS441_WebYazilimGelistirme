@@ -18,8 +18,8 @@ export const Navi = () => {
               <Nav.Link as={Link} to="/multiplayer">
                 Multiplayer
               </Nav.Link>
-              <Nav.Link as={Link} to="/noname">
-                Noname
+              <Nav.Link as={Link} to="/3x3game">
+                3x3 Game
               </Nav.Link>
               <Nav.Link as={Link} to="/how-to-play">
                 How To Play
