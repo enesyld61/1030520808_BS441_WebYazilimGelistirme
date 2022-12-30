@@ -7,7 +7,7 @@ export const HowToPlay = () => {
   return (
     <div>
       <h1>How To Play</h1>
-      <p>Nothing here, for now.</p>
+      <p>Taş kağıt makas işte.</p>
     </div>
   );
 };

@@ -63,7 +63,7 @@ export const Singleplayer = () => {
       if (pWin > pLose) {
         setResult(["You won!", "win"]);
       } else if (pWin < pLose) {
-        setResult(["You lose!", "lose"]);
+        setResult(["You lost!", "lose"]);
       } else {
         setResult(["Draw!", "draw"]);
       }
