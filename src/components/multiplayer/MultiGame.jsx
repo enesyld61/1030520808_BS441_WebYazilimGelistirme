@@ -4,7 +4,6 @@ import Rock from "../../images/rock.png";
 import Paper from "../../images/paper.png";
 import Scissors from "../../images/scissors.png";
 import "../../assets/multiplayer/MultiGame.css";
-import { useEffect } from "react";
 
 export const MultiGame = ({
   p1Play,

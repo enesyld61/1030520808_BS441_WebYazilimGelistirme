@@ -30,7 +30,6 @@ export const Singleplayer = () => {
       localStorage.setItem("previousSingle", JSON.stringify([]));
       setNewStorage(!newStorage);
     }
-    //setHistory(JSON.parse(localStorage.getItem("previousSingle")));
     document.title = "Singleplayer";
   }, []);
   useEffect(() => {

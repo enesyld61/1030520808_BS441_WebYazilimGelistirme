@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "../../assets/game3x3/Game3x3.css";
 import Rock from "../../images/rock.png";
 import Paper from "../../images/paper.png";
@@ -13,26 +14,36 @@ export const Noname = () => {
   const [point, setPoint] = useState(0);
   const [disable, setDisable] = useState(true);
   const [text, setText] = useState("Choose one");
+  const [newGame, setNewGame] = useState(false);
 
   useEffect(() => {
     document.title = "3x3 Game";
-    const tempArr = [
-      { id: 0, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 1, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 2, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 3, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 4, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 5, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 6, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 7, int: Math.floor(Math.random() * 3), text: "?" },
-      { id: 8, int: Math.floor(Math.random() * 3), text: "?" },
-    ];
-    setArr(tempArr);
+    setNewGame(true);
   }, []);
 
   useEffect(() => {
+    if (newGame) {
+      const tempArr = [
+        { id: 0, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 1, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 2, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 3, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 4, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 5, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 6, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 7, int: Math.floor(Math.random() * 3), text: "?" },
+        { id: 8, int: Math.floor(Math.random() * 3), text: "?" },
+      ];
+      setArr(tempArr);
+      setNewGame(false);
+    }
+  }, [newGame]);
+
+  useEffect(() => {
     if (counter === 9) {
-      console.log("bitti");
+      const resultCont = document.getElementById("resultCont");
+      resultCont.classList.remove("close");
+      resultCont.classList.add("open");
     }
   }, [counter]);
 
@@ -42,14 +53,11 @@ export const Noname = () => {
     setArr(tempArr);
     const tempBtn = document.getElementById(`btn-${id}`);
     if (int === 0) {
-      tempBtn.classList.add("rockImg");
-      tempBtn.classList.add("disabled");
+      tempBtn.classList.add("rockImg", "disabled");
     } else if (int === 1) {
-      tempBtn.classList.add("paperImg");
-      tempBtn.classList.add("disabled");
+      tempBtn.classList.add("paperImg", "disabled");
     } else {
-      tempBtn.classList.add("scissorsImg");
-      tempBtn.classList.add("disabled");
+      tempBtn.classList.add("scissorsImg", "disabled");
     }
     color(int, tempBtn);
     setCounter((prev) => prev + 1);
@@ -94,17 +102,37 @@ export const Noname = () => {
     setSelectedInt(int);
     const tempImg = document.getElementById(`img${int}`);
     tempImg.classList.remove("unselected");
-    tempImg.classList.add("selected");
-    tempImg.classList.add("disabled");
+    tempImg.classList.add("selected", "disabled");
     setDisable(false);
     [0, 1, 2].forEach((element) => {
       if (element !== int) {
         const tempImg2 = document.getElementById(`img${element}`);
-        tempImg2.classList.remove("selected");
         tempImg2.classList.add("unselected");
-        tempImg2.classList.remove("disabled");
+        tempImg2.classList.remove("selected", "disabled");
       }
     });
+  };
+
+  const playAgain = () => {
+    setCounter(0);
+    setPoint(0);
+    setNewGame(true);
+    for (let i = 0; i < 9; i++) {
+      const tempBtn = document.getElementById(`btn-${i}`);
+      tempBtn.classList.remove(
+        "win",
+        "draw",
+        "lose",
+        "rockImg",
+        "paperImg",
+        "scissorsImg",
+        "disabled"
+      );
+    }
+
+    const resultCont = document.getElementById("resultCont");
+    resultCont.classList.remove("open");
+    resultCont.classList.add("close");
   };
 
   return (
@@ -161,6 +189,21 @@ export const Noname = () => {
             <h2>Score: {point}</h2>
           </Col>
         </Row>
+      </Container>
+      <Container id="resultCont" className="close">
+        <h2 id="resultLabel">Your score: {point}</h2>
+        <Button
+          className="resultBtns"
+          variant="primary"
+          onClick={() => playAgain()}
+        >
+          Play Again
+        </Button>{" "}
+        <Link to="/">
+          <Button className="resultBtns" variant="primary">
+            Main Menu
+          </Button>
+        </Link>
       </Container>
     </div>
   );

@@ -69,22 +69,6 @@ export const MultiPreviousGames = ({ history, setHistory }) => {
       <Container id="collapse-text">
         <Collapse in={open}>
           <ListGroup>
-            {/* {history[0] != null ? (
-              history.map((result) => (
-                <ListGroupItem
-                  className={`resultListItem ${result.result}`}
-                  key={history.indexOf(result)}
-                >
-                  <img className="resultPP" src={result.pp1} alt="pp" />{" "}
-                  <h5 className="resultWriting">{result.name1}</h5>{" "}
-                  <h5 className="resultWriting">{result.score}</h5>{" "}
-                  <h5 className="resultWriting">{result.name2}</h5>{" "}
-                  <img className="resultPP" src={result.pp2} alt="pp" />
-                </ListGroupItem>
-              ))
-            ) : (
-              <div>dsad</div>
-            )} */}
             {history.map((result) => (
               <ListGroupItem
                 className={`resultListItem ${result.result}`}
